@@ -4,8 +4,8 @@ use std::io::prelude::*;
 use std::io::{self, BufReader};
 use std::fs::File;
 
-const LENGTH_OF_OBJECT_SIZE: usize = 1;
-const LENGTH_OF_ANIMATION_SIZE: usize = 1;
+const LENGTH_OF_OBJECT_SIZE: usize = 4;
+const LENGTH_OF_ANIMATION_SIZE: usize = 4;
 
 /// Animo Object
 #[derive(Clone, Debug)]
