@@ -84,17 +84,20 @@ mod tests {
         let anim = AnimationModel::load(file_name)?;
         let mut animation = anim.run();
         assert_eq!(animation.next().unwrap().to_text(), "".to_string());
-        assert_eq!(animation.next().unwrap().to_text(), "".to_string());
         Ok(())
     }
 
     #[test]
     fn load_object_exists_and_no_animation() -> io::Result<()> {
-        let file_name = "./test_files/object_exists_and_no_animation";
+        let file_name = "./test_files/object_exists_and_no_animation0";
         let anim = AnimationModel::load(file_name)?;
         let mut animation = anim.run();
-        assert_eq!(animation.next().unwrap().to_text(), "A".to_string());
-        assert_eq!(animation.next().unwrap().to_text(), "A".to_string());
+        assert_eq!(animation.next().unwrap().to_text(), "ABC".to_string());
+        let file_name = "./test_files/object_exists_and_no_animation1";
+        let anim = AnimationModel::load(file_name)?;
+        let mut animation = anim.run();
+        assert_eq!(animation.next().unwrap().to_text(), "DEF".to_string());
         Ok(())
     }
+
 }
