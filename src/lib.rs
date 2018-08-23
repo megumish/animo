@@ -34,7 +34,7 @@ impl AnimationModel {
 
         let mut file = remain_file;
         let _remain_file = file.split_off(object_size);
-        let object = String::from_utf8(file).unwrap();
+        let objects = Strng::from_utf8(file).unwrap();
         Ok(AnimationModel {
             object: AnimObject::AnimString(object),
         })
@@ -99,5 +99,4 @@ mod tests {
         assert_eq!(animation.next().unwrap().to_text(), "DEF".to_string());
         Ok(())
     }
-
 }
